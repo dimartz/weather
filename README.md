@@ -23,9 +23,9 @@ Weather requires the following dependencies:
 
 ### Synopsis
 
-	ansiweather [-l location] [-u system] [-f days] [-F] [-a value]
-	            [-s value] [-k key] [-i value] [-w value] [-h value]
-	            [-H value] [-p value] [-d value] [-v]
+	weather [-l location] [-u system] [-f days] [-F] [-a value]
+	        [-s value] [-k key] [-i value] [-w value] [-h value]
+	        [-H value] [-p value] [-d value] [-v]
 
 ### Options
 
@@ -73,7 +73,7 @@ Weather requires the following dependencies:
 Display forecast using metric units for the next five days (showing symbols
 and daylight data) for Rzeszow, Poland:
 
-	ansiweather -l "Rzeszow,PL" -u metric -s true -f 5 -d true
+	weather -l "Rzeszow,PL" -u metric -s true -f 5 -d true
 
 
 
@@ -84,7 +84,7 @@ ANSIWEATHERRC can be set to override this. The following configuration
 options (detailed below) are available and should be set according to
 your location and preferences.
 
-Example: `~/.ansiweatherrc`
+Example: `~/.weatherrc`
 
 	location:Rzeszow,PL
 	units:metric
