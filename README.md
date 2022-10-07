@@ -1,9 +1,7 @@
 ## Description
 
-AnsiWeather is a Shell script for displaying the current weather conditions
+Weather is a command API for displaying the current weather conditions
 in your terminal, with support for ANSI colors and Unicode symbols.
-
-![AnsiWeather Screenshot][1]
 
 Weather data comes from the `OpenWeatherMap` free weather API.
 
@@ -11,12 +9,9 @@ Weather data comes from the `OpenWeatherMap` free weather API.
 
 ## Requirements
 
-AnsiWeather requires the following dependencies:
+Weather requires the following dependencies:
 
-- A command to fetch HTTP data such as FTP, cURL or wget
-- [jq][2] (lightweight and flexible command-line JSON processor)
-- [bc][3] (arbitrary precision numeric processing language), for doing float
-  arithmetic
+- cURL
 
 
 
@@ -26,14 +21,6 @@ After cloning the repository, simply invoke the script by typing:
 
 	./ansiweather
 
-AnsiWeather packages are available for:
-
-- [OpenBSD][4]
-- [NetBSD][5]
-- [FreeBSD][6]
-- [Debian][7]
-- [Ubuntu][8]
-- [Homebrew][9]
 
 
 
@@ -97,7 +84,7 @@ and daylight data) for Rzeszow, Poland:
 
 ## Configuration
 
-The default config file is ~/.ansiweatherrc. The environment variable
+The default config file is ~/.weatherrc. The environment variable
 ANSIWEATHERRC can be set to override this. The following configuration
 options (detailed below) are available and should be set according to
 your location and preferences.
@@ -105,12 +92,10 @@ your location and preferences.
 Example: `~/.ansiweatherrc`
 
 	location:Rzeszow,PL
-	fetch_cmd:ftp -V -o -
 	units:metric
 	show_daylight:true
 
-The file `ansiweatherrc.example` contains all available configuration
-variables.
+
 
 ### Location
 
@@ -126,27 +111,7 @@ Example: `Rzeszow,PL`
 
 	location:Rzeszow,PL
 
-### Fetch Command
 
-Various tools can be used to fetch data: `curl`, `wget`, `ftp`.
-
-Please note that `ftp` flags and options might differ among implementations
-and versions, and the example provided here is known to work only on OpenBSD
-and NetBSD.
-
-Example: `curl -sf`
-
-	fetch_cmd:curl -sf
-
-Example: `wget -qO-`
-
-	fetch_cmd:wget -qO-
-
-Example: `ftp -V -o -`
-
-	fetch_cmd:ftp -V -o -
-
-Default: `curl -sf`
 
 ### System of Units
 
@@ -156,36 +121,7 @@ Both `metric` and `imperial` systems are supported.
 
 Default: `metric`
 
-### Display ANSI sequences
 
-Toggle ANSI sequences display. Value can be either `true` (requires an ANSI
-capable display) or `false`.
-
-	ansi:true
-
-Default: `true`
-
-### Display symbols
-
-Toggle Unicode symbols display. Value can be either `true` (requires a
-Unicode capable display) or `false`.
-
-	symbols:true
-
-Default: `false`
-
-Symbols can be configured or replaced by custom text using the following
-configuration variables: `sun`, `moon`, `clouds`, `rain`, `fog`, `mist`,
-`haze`, `snow`, `thunderstorm`.
-
-### Display forecast
-
-Show upcoming forecast for the next `N` days (for 0 <= N <= 7). `0` will
-show standard output.
-
-	forecast:5
-
-Default: `0`
 
 ### Display wind / humidity / pressure
 
@@ -207,18 +143,7 @@ Toggle daylight display. Value can be either `true` or `false`.
 
 Default: `false`
 
-### Date and Time format
 
-Configure date and time format display. See Unix date formatting docs
-for details.
-
-	dateformat:%a %b %d
-
-Default: `%a %b %d`
-
-	timeformat:%b %d %r
-
-Default: `%b %d %r`
 
 ### OpenWeatherMap API key
 
@@ -232,32 +157,11 @@ key, but users can optionally get their own one by creating a free
 
 ## License
 
-AnsiWeather is released under the BSD 2-Clause license. See `LICENSE` file
+Weather is released under the BSD 2-Clause license. See `LICENSE` file
 for details.
-
-
-
-## Author
-
-AnsiWeather is developed by Frederic Cambus.
-
-- Site: https://www.cambus.net
 
 
 
 ## Resources
 
-GitHub: https://github.com/fcambus/ansiweather
-
-[1]: https://www.cambus.net/files/ansiweather/ansiweather.png
-[2]: https://stedolan.github.io/jq/
-[3]: https://www.gnu.org/software/bc/
-[4]: https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/astro/ansiweather
-[5]: https://pkgsrc.se/misc/ansiweather
-[6]: https://www.freshports.org/misc/ansiweather
-[7]: https://packages.debian.org/search?keywords=ansiweather
-[8]: https://packages.ubuntu.com/search?keywords=ansiweather
-[9]: https://formulae.brew.sh/formula/ansiweather
-[10]: https://www.statdns.com/cctlds/
-[11]: https://bulk.openweathermap.org/sample/
-[12]: https://home.openweathermap.org/users/sign_up
+GitHub: https://github.com/dimartz/weather
