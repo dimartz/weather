@@ -19,15 +19,6 @@ Weather requires the following dependencies:
 
 
 
-## Installation
-
-After cloning the repository, simply invoke the script by typing:
-
-	./ansiweather
-
-
-
-
 ## Usage
 
 ### Synopsis
