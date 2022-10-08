@@ -4,7 +4,7 @@
 
 ## Description
 
-Weather is a command API for displaying the current weather conditions
+Weather is a CLI for displaying the current weather conditions
 in your terminal, with support for ANSI colors and Unicode symbols.
 
 Weather data comes from the `OpenWeatherMap` free weather API.
@@ -16,6 +16,8 @@ Weather data comes from the `OpenWeatherMap` free weather API.
 Weather requires the following dependencies:
 
 - cURL
+- Nerd Fonts
+- JoyPixels
 
 
 
@@ -23,120 +25,48 @@ Weather requires the following dependencies:
 
 ### Synopsis
 
-	weather [-l location] [-u system] [-f days] [-F] [-a value]
-	        [-s value] [-k key] [-i value] [-w value] [-h value]
-	        [-H value] [-p value] [-d value] [-v]
+	weather [-l location] [-I imperial system] [-F extended forecast]
+	        [-h humidity] [-w wind] [-d daylight] [- only weather]
+	        [-H help] [-V version]
 
 ### Options
 
-	-l location
+	-l="[LOCATION]"
+	(use quotes)
 	        Specify location.
 	
-	-u system
-	        Specify unit system to use ( metric or imperial ).
+	-I
+		Toggle unit system to Imperial.
+		Default: Metric.
 	
-	-f days
-	        Toggle forecast mode for the specified number of upcoming days.
+	-F
+		Toggle extended forecast mode.
 	
-	-F      Toggle forecast mode for the next five days.
+	-h
+		Show humidity data display.
 	
-	-a value
-	        Toggle ANSI colors display ( true or false ).
+	-w
+		Show wind data display.
+		
+	-d
+		Show daylight data display.
+		
+	-
+	(dash symbol)
+	        Show only weather display.
 	
-	-s value
-	        Toggle symbols display ( true or false ).
-	
-	-k key  Specify OpenWeatherMap API key.
-	
-	-i value
-	        Toggle UV Index display ( true or false ).
-	
-	-w value
+	-H, --help
+		Display usage information.
+		
+	-V, --version
+		Display version.
 	        Toggle wind data display ( true or false ).
-	
-	-h value
-	        Toggle humidity data display ( true or false ).
-	
-	-H value
-	        Toggle Feels like display ( true or false ).
-	
-	-p value
-	        Toggle pressure data display ( true or false ).
-	
-	-d value
-	        Toggle daylight data display ( true or false ).
-	
-	-v      Display version.
 
 ### Examples
 
-Display forecast using metric units for the next five days (showing symbols
-and daylight data) for Rzeszow, Poland:
+Display extended forecast using metric units for Buenos Aires, Argentina:
 
-	weather -l "Rzeszow,PL" -u metric -s true -f 5 -d true
-
-
-
-## Configuration
-
-The default config file is ~/.weatherrc. The environment variable
-ANSIWEATHERRC can be set to override this. The following configuration
-options (detailed below) are available and should be set according to
-your location and preferences.
-
-Example: `~/.weatherrc`
-
-	location:Rzeszow,PL
-	units:metric
-	show_daylight:true
-
-
-
-### Location
-
-Location format is `city,CC` where `CC` is a two-letter ISO 3166-1 alpha-2
-country code. A list of country codes is available [here][10].
-Alternatively, it's also possible to specify locations by their ID, a city
-list is available [here][11].
-
-In case no location is specified, AnsiWeather will fallback to the default
-location.
-
-Example: `Rzeszow,PL`
-
-	location:Rzeszow,PL
-
-
-
-### System of Units
-
-Both `metric` and `imperial` systems are supported.
-
-	units:metric
-
-Default: `metric`
-
-
-
-### Display wind / humidity / pressure
-
-Toggle UV Index, wind, humidity, and/or pressure display. Values can be either
-`true` or `false`.
-
-	show_uvi:true
-	show_wind:true
-	show_humidity:true
-	show_pressure:true
-
-Default: `true`
-
-### Display sunrise / sunset
-
-Toggle daylight display. Value can be either `true` or `false`.
-
-	show_daylight:false
-
-Default: `false`
+	weather -l="Buenos Aires,AR" -F
 
 
 
