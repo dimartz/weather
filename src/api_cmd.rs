@@ -162,7 +162,9 @@ pub fn weather() {
         None => {
             write!(
                 handle,
-                "{}  {}    {} {}     {}  {}    {} {}  {} {}",
+                "{} in {}:    {}  {}    {} {}     {}  {}    {} {}  {} {}",
+                "Weather".bright_blue().bold(),
+                data["name"].to_string().trim_matches('"').green().bold(),
                 icon_w,
                 temp(),
                 hum(),
