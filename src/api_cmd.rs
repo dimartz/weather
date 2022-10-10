@@ -61,7 +61,7 @@ pub fn weather() {
 
     let (cfg, args) = init_config();
     let data = openweathermap("weather", &cfg);
-
+    
     let icon_w = set_weather_icon(
         data["weather"][0]["main"].to_string(),
         set_the_period(&data),
@@ -162,7 +162,7 @@ pub fn weather() {
         None => {
             write!(
                 handle,
-                "{} in {}:    {}  {}    {} {}     {}  {}    {} {}  {} {}",
+                "    {} in {}:    {}  {}    {} {}     {}  {}    {} {}  {} {}",
                 "Weather".bright_blue().bold(),
                 data["name"].to_string().trim_matches('"').green().bold(),
                 icon_w,

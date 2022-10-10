@@ -198,7 +198,7 @@ pub fn print_help() {
     
     OPTIONS:
 
-    -l=\"[location]\"         Specify location:
+    -l=\"[LOCATION]\"         Specify location:
     (use quotes)                             -l=\"[city name]\"
                                              -l=\"[city name],[country code]\"
                             Examples:
