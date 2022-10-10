@@ -19,7 +19,7 @@ Weather requires the following dependencies:
 
 - cURL
 - Nerd Fonts
-- JoyPixels
+- JoyPixels (or any other emoji source)
 
 
 
@@ -35,42 +35,43 @@ Weather requires the following dependencies:
 
 	-l="[LOCATION]"
 	(use quotes)
-	        Specify location.
+	        	Specify location.
+			Default: auto localization.
 	
 	-I
-		Toggle unit system to Imperial.
-		Default: Metric.
+			Toggle unit system to Imperial.
+			Default: Metric.
 	
 	-F
-		Toggle extended forecast mode.
+			Toggle extended forecast mode.
 	
 	-h
-		Show humidity data display.
+			Show humidity data display.
 	
 	-w
-		Show wind data display.
+			Show wind data display.
 		
 	-d
-		Show daylight data display.
+			Show daylight data display.
 		
 	-
 	(dash symbol)
-	        Show only weather display.
+	        	Show only weather display.
 	
 	-H, --help
-		Display usage information.
+			Display usage information.
 		
 	-V, --version
-		Display version.
-	        Toggle wind data display ( true or false ).
+			Display version
+
 
 ### Examples
 
-Display extended forecast using metric units for Buenos Aires, Argentina:
+Display weather using imperial units for Gold Coast, Australia:
 
-	weather -l="Buenos Aires,AR" -F
+	weather -l="Gold Coast, Australia" -I
 
-
+![wtr_ex_sc](https://user-images.githubusercontent.com/98893034/194863363-2104ae37-bb65-459b-8ce4-baa351314cd9.png)
 
 ### OpenWeatherMap API key
 
@@ -92,3 +93,5 @@ for details.
 ## Resources
 
 GitHub: https://github.com/dimartz/weather
+
+GitHub: https://github.com/fcambus/ansiweather
