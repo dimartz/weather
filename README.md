@@ -69,7 +69,7 @@ Weather requires the following dependencies:
 
 Display weather using imperial units for Gold Coast, Australia:
 
-	weather -l="Gold Coast, Australia" -I
+	weather -l="Gold Coast,AU" -I
 
 ![wtr_ex_sc](https://user-images.githubusercontent.com/98893034/194863363-2104ae37-bb65-459b-8ce4-baa351314cd9.png)
 
