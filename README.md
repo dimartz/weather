@@ -7,7 +7,7 @@
 Weather is a CLI for displaying the current weather conditions
 in your terminal, with support for ANSI colors and Unicode symbols.
 
-![w_sc](https://user-images.githubusercontent.com/98893034/194847943-edcdf579-90fc-410e-b360-10dcf119e7d6.png)
+![wtr_def_sc](https://user-images.githubusercontent.com/98893034/194855543-759d83ba-6ae9-4c9c-a06b-326079fa9c20.png)
 
 Weather data comes from the `OpenWeatherMap` free weather API.
 
