@@ -73,14 +73,6 @@ Display weather using imperial units for Gold Coast, Australia:
 
 ![wtr_ex_sc](https://user-images.githubusercontent.com/98893034/194863363-2104ae37-bb65-459b-8ce4-baa351314cd9.png)
 
-### OpenWeatherMap API key
-
-Specify an OpenWeatherMap API key. By default AnsiWeather uses its own
-key, but users can optionally get their own one by creating a free
-[OpenWeatherMap account][12].
-
-	api_key:85a4e3c55b73909f42c6a23ec35b7147
-
 
 
 ## License
