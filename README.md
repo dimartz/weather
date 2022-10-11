@@ -102,7 +102,7 @@ country code. A list of country codes is available [here][1].
 
 Example: `-l="Copenhagen,DK"`
 
-In case no location is specified, weather will auto-detect your location with [ip-api][2].
+In case no location is specified, `weather` will auto-detect your location with [ip-api][2].
 
 
 
