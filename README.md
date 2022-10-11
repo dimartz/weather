@@ -116,6 +116,7 @@ for details.
 ## Resources
 
 GitHub: https://github.com/dimartz/weather
+
 GitHub: https://github.com/fcambus/ansiweather
 
 [1]: https://www.statdns.com/cctlds/
