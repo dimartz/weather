@@ -4,18 +4,18 @@
 
 ## Description
 
-Weather is a CLI for displaying the current weather conditions
-in your terminal, with support for ANSI colors and Unicode symbols.
+`weather` is a CLI for displaying the current weather conditions in your terminal,
+with support for ANSI colors and Unicode symbols.
 
 ![wtr_def_sc](https://user-images.githubusercontent.com/98893034/194855543-759d83ba-6ae9-4c9c-a06b-326079fa9c20.png)
 
-Weather data comes from the `OpenWeatherMap` free weather API.
+`weather` data comes from the `OpenWeatherMap` free weather API.
 
 
 
 ## Requirements
 
-Weather requires the following dependencies:
+`weather` requires the following dependencies:
 
 - cURL
 - Cargo
@@ -84,7 +84,6 @@ $ cargo uninstall weather
 	-V, --version
 				Display version
 
-
 ### Examples
 
 Display weather using imperial units for Gold Coast, Australia:
@@ -93,23 +92,29 @@ Display weather using imperial units for Gold Coast, Australia:
 
 ![wtr_ex_sc](https://user-images.githubusercontent.com/98893034/194863363-2104ae37-bb65-459b-8ce4-baa351314cd9.png)
 
-
-
 ### Location
 
-Location format is `city,CC` where `CC` is a two-letter ISO 3166-1 alpha-2
-country code. A list of country codes is available [here][1].
+Location format is `city,CC` where `CC` is a two-letter ISO 3166-1 alpha-2 country code.
+A list of country codes is available [here][1].
 
-Example: `-l="Copenhagen,DK"`
+Example: `"Copenhagen,DK"`
 
 In case no location is specified, `weather` will auto-detect your location with [ip-api][2].
+
+### System of Units
+
+Both `metric` and `imperial` systems are supported.
+`metric` is the default unit. To switch to `imperial`:
+
+	weather -I -
+
+![wtr_imp_sc](https://user-images.githubusercontent.com/98893034/195007249-8c4dc0ab-21b9-459f-91e5-56c27933c67a.png)
 
 
 
 ## License
 
-Weather is released under the BSD 2-Clause license. See `LICENSE` file
-for details.
+`weather` is released under the BSD 2-Clause license. See `LICENSE` file for details.
 
 
 
