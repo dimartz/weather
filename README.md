@@ -110,8 +110,8 @@ Both `metric` and `imperial` systems are supported.
 Show upcoming forecast for the next days.
 
 	weather -F
-	
-![wtr_F_sc2](https://user-images.githubusercontent.com/98893034/195032657-a6a72305-17a2-4ac4-aebf-82bf4b08c940.png)
+
+![wtr_F_sc2](https://user-images.githubusercontent.com/98893034/195042974-c717a47d-f8b1-40b6-9853-cf9f3dae1c1b.png)
 
 ### Date and Time format
 
