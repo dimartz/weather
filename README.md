@@ -98,11 +98,11 @@ Display weather using imperial units for Gold Coast, Australia:
 ### Location
 
 Location format is `city,CC` where `CC` is a two-letter ISO 3166-1 alpha-2
-country code. A list of country codes is available [here][(https://www.statdns.com/cctlds/)].
+country code. A list of country codes is available [here][1].
 
 Example: `Oslo,NO`
 
-In case no location is specified, weather will auto-detect your location with [ip-api.com][(https://ip-api.com/)].
+In case no location is specified, weather will auto-detect your location with [ip-api][2].
 
 
 
@@ -117,3 +117,6 @@ for details.
 
 GitHub: https://github.com/dimartz/weather
 GitHub: https://github.com/fcambus/ansiweather
+
+[1]: https://www.statdns.com/cctlds/
+[2]: https://ip-api.com/
