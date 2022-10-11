@@ -111,7 +111,7 @@ Show upcoming forecast for the next days.
 
 	weather -F
 
-![wtr_F_sc](https://user-images.githubusercontent.com/98893034/195024454-4ab2e714-54a6-46e5-95db-db3b50adaf12.png)
+![wtr_F_sc](https://user-images.githubusercontent.com/98893034/195029475-dfbb9690-4df6-4649-b9a6-3ce7f50725ec.png)
 
 ### Date and Time format
 
