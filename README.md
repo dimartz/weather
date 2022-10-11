@@ -100,7 +100,7 @@ Display weather using imperial units for Gold Coast, Australia:
 Location format is `city,CC` where `CC` is a two-letter ISO 3166-1 alpha-2
 country code. A list of country codes is available [here][1].
 
-Example: `Oslo,NO`
+Example: `-l="Copenhagen,DK"`
 
 In case no location is specified, weather will auto-detect your location with [ip-api][2].
 
