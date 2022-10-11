@@ -1,7 +1,6 @@
 # weather
 
 
-
 ## Description
 
 `weather` is a CLI for displaying the current weather conditions in your terminal,
@@ -12,7 +11,6 @@ with support for ANSI colors and Unicode symbols.
 `weather` data comes from the `OpenWeatherMap` free weather API.
 
 
-
 ## Requirements
 
 `weather` requires the following dependencies:
@@ -21,7 +19,6 @@ with support for ANSI colors and Unicode symbols.
 - Cargo
 - Nerd Fonts
 - JoyPixels (or any other emoji source)
-
 
 
 ## Installation
@@ -35,14 +32,12 @@ $ cargo install --path weather/
 Move the binary file `~/.cargo/bin/weather` to the path of your choice.
 
 
-
 ## Uninstall
 
 If the binary remains on the original path:
 ```
 $ cargo uninstall weather
 ```
-
 
 
 ## Usage
@@ -86,11 +81,11 @@ $ cargo uninstall weather
 
 ### Examples
 
-Display weather using imperial units for Gold Coast, Australia:
+Display `weather` using imperial units for Gold Coast, Australia:
 
 	weather -l="Gold Coast,AU" -I
 
-![wtr_ex_sc](https://user-images.githubusercontent.com/98893034/194863363-2104ae37-bb65-459b-8ce4-baa351314cd9.png)
+![wtr_ex_sc2](https://user-images.githubusercontent.com/98893034/195021751-a7cce47a-87c3-460c-b06d-52fe9ba0da64.png)
 
 ### Location
 
@@ -110,12 +105,22 @@ Both `metric` and `imperial` systems are supported.
 
 ![wtr_imp_sc](https://user-images.githubusercontent.com/98893034/195007249-8c4dc0ab-21b9-459f-91e5-56c27933c67a.png)
 
+### Display forecast
+
+Show upcoming forecast for the next days.
+
+	weather -F
+
+![wtr_F_sc](https://user-images.githubusercontent.com/98893034/195024454-4ab2e714-54a6-46e5-95db-db3b50adaf12.png)
+
+### Date and Time format
+
+`weather` uses the format provided by `date` according to your system settings.
 
 
 ## License
 
 `weather` is released under the BSD 2-Clause license. See `LICENSE` file for details.
-
 
 
 ## Resources
