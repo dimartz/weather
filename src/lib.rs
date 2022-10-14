@@ -73,24 +73,26 @@ impl Default for Config<'_> {
     }
 }
 
-pub fn set_weather_icon<'c>(data: String, period: &str, cfg: &Config<'c>) -> &'c str {
-    match data.trim_matches('"') {
-        "Clear" => match period {
-            "day" => cfg.icon.sun,
-            "night" => cfg.icon.moon,
-            _ => cfg.icon.warning,
-        },
-        "Clouds" => cfg.icon.clouds,
-        "Rain" => cfg.icon.rain,
-        "Drizzle" => cfg.icon.drizzle,
-        "Fog" => cfg.icon.fog,
-        "Mist" => cfg.icon.mist,
-        "Haze" => cfg.icon.haze,
-        "Snow" => cfg.icon.snow,
-        "Thunderstorm" => cfg.icon.thunderstorm,
-        "Dust" => cfg.icon.dust,
-        "Smoke" => cfg.icon.smoke,
-        _ => cfg.icon.warning,
+impl Config<'_> {
+    fn set_icon<'c>(&'c self, data: String, period: &str) -> &'c str {
+        match data.trim_matches('"') {
+            "Clear" => match period {
+                "day" => self.icon.sun,
+                "night" => self.icon.moon,
+                _ => self.icon.warning,
+            },
+            "Clouds" => self.icon.clouds,
+            "Rain" => self.icon.rain,
+            "Drizzle" => self.icon.drizzle,
+            "Fog" => self.icon.fog,
+            "Mist" => self.icon.mist,
+            "Haze" => self.icon.haze,
+            "Snow" => self.icon.snow,
+            "Thunderstorm" => self.icon.thunderstorm,
+            "Dust" => self.icon.dust,
+            "Smoke" => self.icon.smoke,
+            _ => self.icon.warning,
+        }
     }
 }
 
