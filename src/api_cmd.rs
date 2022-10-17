@@ -408,19 +408,19 @@ pub fn forecast_daily() {
 
         let emoji = match cfg.unit.as_str() {
             "imperial" => {
-                if min > 77.0 {
-                    cfg.icon.hot
-                } else if max < 59.0 {
+                if min <= 50.0 && max <= 59.0 {
                     cfg.icon.cold
+                } else if min >= 77.0 && max >= 86.0 {
+                    cfg.icon.hot
                 } else {
                     "  "
                 }
             }
             _ => {
-                if min > 25.0 {
-                    cfg.icon.hot
-                } else if max < 15.0 {
+                if min <= 10.0 && max <= 15.0 {
                     cfg.icon.cold
+                } else if min >= 25.0 && max >= 30.0 {
+                    cfg.icon.hot
                 } else {
                     "  "
                 }
