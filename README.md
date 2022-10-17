@@ -6,7 +6,7 @@
 `weather` is a CLI for displaying the current weather conditions in your terminal,
 with support for ANSI colors and Unicode symbols.
 
-![wtr_def_sc](https://user-images.githubusercontent.com/98893034/194855543-759d83ba-6ae9-4c9c-a06b-326079fa9c20.png)
+![wtr_def_sc](https://user-images.githubusercontent.com/98893034/196249825-87993f29-8220-4eb2-a51b-074141c1ddff.png)
 
 `weather` data comes from the `OpenWeatherMap` free weather API.
 
@@ -85,7 +85,7 @@ Display `weather` using imperial units for Gold Coast, Australia:
 
 	weather -l="Gold Coast,AU" -I
 
-![wtr_ex_sc2](https://user-images.githubusercontent.com/98893034/195021751-a7cce47a-87c3-460c-b06d-52fe9ba0da64.png)
+![wtr_example_sc](https://user-images.githubusercontent.com/98893034/196249896-298d8d6d-f0e8-4afc-88b5-b22da54d4dc4.png)
 
 ### Location
 
@@ -103,7 +103,7 @@ Both `metric` and `imperial` systems are supported.
 
 	weather -I -
 
-![wtr_imp_sc](https://user-images.githubusercontent.com/98893034/195007249-8c4dc0ab-21b9-459f-91e5-56c27933c67a.png)
+![wtr_imp_sc](https://user-images.githubusercontent.com/98893034/196249927-f854719d-9de2-4e6a-a61a-166967caafc0.png)
 
 ### Display forecast
 
@@ -111,7 +111,7 @@ Show upcoming forecast for the next days.
 
 	weather -F
 
-![wtr_F_sc2](https://user-images.githubusercontent.com/98893034/195042974-c717a47d-f8b1-40b6-9853-cf9f3dae1c1b.png)
+![wtr_ext_sc](https://user-images.githubusercontent.com/98893034/196249996-b3c7df2a-fe80-48ba-a9b5-a00bc254fbc8.png)
 
 ### Date and Time format
 
