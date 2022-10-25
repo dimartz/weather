@@ -96,6 +96,69 @@ impl Config<'_> {
     }
 }
 
+fn init<'c>() -> (Config<'c>, Option<Vec<String>>) {
+    let mut cfg = Config::default();
+    let mut args = return_args();
+
+    if let Some(arg) = &mut args {
+        if arg.iter().any(|a| a.contains("-l=")) && arg.iter().any(|a| a == "-I") {
+            if let Some(i) = arg.iter().position(|a| a.contains("-l=")) {
+                cfg.loc = arg[i]
+                    .replace(' ', "+")
+                    .trim_start_matches("-l=")
+                    .to_string();
+                arg.remove(i);
+            }
+            if let Some(i) = arg.iter().position(|a| a == ("-I")) {
+                cfg.unit = "imperial".to_string();
+                cfg.icon.unit = "\u{fa04}".to_string();
+                arg.remove(i);
+            }
+            if arg.is_empty() {
+                (cfg, None)
+            } else {
+                (cfg, args)
+            }
+        } else if arg.iter().any(|a| a.contains("-l=")) || arg.iter().any(|a| a == "-I") {
+            if let Some(i) = arg.iter().position(|a| a.contains("-l=")) {
+                cfg.loc = arg[i]
+                    .replace(' ', "+")
+                    .trim_start_matches("-l=")
+                    .to_string();
+                arg.remove(i);
+            } else {
+                cfg.loc = auto_location();
+                if let Some(i) = arg.iter().position(|a| a == "-I") {
+                    cfg.unit = "imperial".to_string();
+                    cfg.icon.unit = "\u{fa04}".to_string();
+                    arg.remove(i);
+                }
+            }
+            if arg.is_empty() {
+                (cfg, None)
+            } else {
+                (cfg, args)
+            }
+        } else {
+            cfg.loc = auto_location();
+            (cfg, args)
+        }
+    } else {
+        cfg.loc = auto_location();
+        (cfg, None)
+    }
+}
+
+pub fn return_args() -> Option<Vec<String>> {
+    let args: Vec<String> = env::args().skip(1).collect();
+
+    if args.is_empty() {
+        None
+    } else {
+        Some(args)
+    }
+}
+
 pub fn set_the_period(data: &Value) -> &'static str {
     let timezone = data["timezone"].as_i64().unwrap();
     let now = date_command(vec!["+%s"]).trim().parse::<i64>().unwrap() + timezone;
@@ -180,16 +243,6 @@ pub fn auto_location() -> String {
             }
         }
         _ => panic!("JSON data returned unreadable!"),
-    }
-}
-
-pub fn return_args() -> Option<Vec<String>> {
-    let args: Vec<String> = env::args().skip(1).collect();
-
-    if args.is_empty() {
-        None
-    } else {
-        Some(args)
     }
 }
 

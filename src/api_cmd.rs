@@ -2,64 +2,11 @@ use crate::*;
 use colored::*;
 use std::io::{self, Write};
 
-fn init_config<'c>() -> (Config<'c>, Option<Vec<String>>) {
-    let mut cfg = Config::default();
-    let mut args = return_args();
-
-    if let Some(arg) = &mut args {
-        if arg.iter().any(|a| a.contains("-l=")) && arg.iter().any(|a| a == "-I") {
-            if let Some(i) = arg.iter().position(|a| a.contains("-l=")) {
-                cfg.loc = arg[i]
-                    .replace(' ', "+")
-                    .trim_start_matches("-l=")
-                    .to_string();
-                arg.remove(i);
-            }
-            if let Some(i) = arg.iter().position(|a| a == ("-I")) {
-                cfg.unit = "imperial".to_string();
-                cfg.icon.unit = "\u{fa04}".to_string();
-                arg.remove(i);
-            }
-            if arg.is_empty() {
-                (cfg, None)
-            } else {
-                (cfg, args)
-            }
-        } else if arg.iter().any(|a| a.contains("-l=")) || arg.iter().any(|a| a == "-I") {
-            if let Some(i) = arg.iter().position(|a| a.contains("-l=")) {
-                cfg.loc = arg[i]
-                    .replace(' ', "+")
-                    .trim_start_matches("-l=")
-                    .to_string();
-                arg.remove(i);
-            } else {
-                cfg.loc = auto_location();
-                if let Some(i) = arg.iter().position(|a| a == "-I") {
-                    cfg.unit = "imperial".to_string();
-                    cfg.icon.unit = "\u{fa04}".to_string();
-                    arg.remove(i);
-                }
-            }
-            if arg.is_empty() {
-                (cfg, None)
-            } else {
-                (cfg, args)
-            }
-        } else {
-            cfg.loc = auto_location();
-            (cfg, args)
-        }
-    } else {
-        cfg.loc = auto_location();
-        (cfg, None)
-    }
-}
-
 pub fn weather() {
     let stdout = io::stdout();
     let mut handle = stdout.lock();
 
-    let (cfg, args) = init_config();
+    let (cfg, args) = init();
     let data = openweathermap("weather", &cfg);
 
     let icon_w = cfg.set_icon(
@@ -192,7 +139,7 @@ pub fn forecast_daily() {
     let stdout = io::stdout();
     let mut handle = stdout.lock();
 
-    let (cfg, mut args) = init_config();
+    let (cfg, mut args) = init();
     if let Some(arg) = &mut args {
         if arg.iter().any(|a| a == "-F") {
             if let Some(i) = arg.iter().position(|a| a == "-F") {
